@@ -12,7 +12,7 @@ Tree.prototype.reader = function(callback) {
         for (var i = 0, length = currentNode.children.length; i < length; i++) {
             recurse(currentNode.children[i]);
         }
-        callback(currentNode);
+        callback(currentNode); 
     })(this._root);
 };
 
@@ -25,9 +25,9 @@ tree._root.children.push(new Dates(6));
 tree._root.children[2].parent = tree;
 tree._root.children[0].children.push(new Dates(3));
 tree._root.children[0].children[0].parent = tree._root.children[0];
-tree._root.children[0].children.push(new Dates(4));
+tree._root.children[0].children.push(new Dates(4)); 
 tree._root.children[0].children[1].parent = tree._root.children[0];
 
 tree.reader(function(node) {
     console.log(node.data)
-});
+}); 
